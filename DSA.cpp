@@ -2215,6 +2215,24 @@
 //     return 0;
 // }
 
+// Find power of any number
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     int a;
+//     int b;
+//     cin >> a;
+//     cin >> b;
+//     int ans = 1;
+//     for (int i = 1; i <= b; i++)
+//     {
+//         ans = ans * a;
+//     }
+//     cout << ans << endl;
+//     return 0;
+// }
+
 
 // STL in C++
 // The Standard Template Library (STL) is a set of C++ template classes to provide common programming data structures and functions such as lists, stacks, arrays, etc.
