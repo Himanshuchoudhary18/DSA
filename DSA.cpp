@@ -2631,12 +2631,28 @@
 //     dq.size();
 //     dq.clear();
 //     dq.at(1);
+//     // deque::begin() returns an iterator which is referencing to the first element of the deque
 //     dq.begin();
+//     // The deque::rbegin() is an inbuilt function in C++ STL which returns a reverse iterator which points to the last element of the deque (i.e., its reverse beginning)
 //     dq.rbegin();
+//     // deque::end() returns an iterator which is referencing next to the last element of the deque container (i.e n - 1)
 //     dq.end();
+//     // The deque::rend() is an inbuilt function in C++ STL which returns a reverse iterator which points to the position before the beginning of the deque (which is considered its reverse end)
 //     dq.rend();
 //     return 0;
 // }
+
+// #include <bits/stdc++.h> 
+// using namespace std; 
+// int main() 
+// { 
+//     deque<int> dq = { 10, 20, 30, 40, 50 }; 
+//     cout << "The deque in reverse order: "; 
+//     // prints the elements in reverse order 
+//     for (auto it = dq.rbegin(); it != dq.rend(); ++it) 
+//         cout << *it << " "; 
+//     return 0; 
+// } 
 
 // Lists
 // It's remove and all operations are of T.C -> O(1)
