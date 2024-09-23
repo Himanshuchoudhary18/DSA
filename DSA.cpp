@@ -5205,6 +5205,311 @@
 //     return 0;
 // }
 
+// Hash Array & Hashing
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main() {
+
+//     int n;
+//     cin >> n;
+//     int arr[n];
+//     for (int i = 0; i < n; i++) {
+//         cin >> arr[i];
+//     }
+
+//     //precompute:
+//     int hash[13] = {0};
+//     for (int i = 0; i < n; i++) {
+//         hash[arr[i]] += 1;
+//     }
+
+//     int q;
+//     cin >> q;
+//     while (q--) {
+//         int number;
+//         cin >> number;
+//         // fetching:
+//         cout << hash[number] << endl;
+//     }
+//     return 0;
+// }
+// Input: 
+
+// 5
+// 1 3 2 1 3
+// 5
+// 1 4 2 3 12
+
+// Output: 
+
+// 2
+// 0
+// 1
+// 2
+// 0
+
+// Character occurence if the string contains only lowercase
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     string s;
+//     cin >> s;
+//     //precompute:
+//     int hash[26] = {0};
+//     for (int i = 0; i < s.size(); i++) {
+//         hash[s[i] - 'a']++;
+//     }
+//     int q;
+//     cin >> q;
+//     while (q--) {
+//         char c;
+//         cin >> c;
+//         // fetch:
+//         cout << hash[c - 'a'] << endl;
+//     }
+//     return 0;
+// }
+// Input: 
+// abcdabehf
+// 5
+// a
+// g
+// h
+// b
+// c
+// Output: 2
+// 0
+// 1
+// 2
+// 1
+
+// Character occurence if the string contains only lowercase:
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     string s;
+//     cin >> s;
+//     //precompute:
+//     int hash[26] = {0};
+//     for (int i = 0; i < s.size(); i++) {
+//         hash[s[i] - 'A']++;
+//     }
+//     int q;
+//     cin >> q;
+//     while (q--) {
+//         char c;
+//         cin >> c;
+//         // fetch:
+//         cout << hash[c - 'A'] << endl;
+//     }
+//     return 0;
+// }
+
+// Code if the string contains both uppercase and lowercase
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     string s;
+//     cin >> s;
+//     //precompute:
+//     int hash[256] = {0};
+//     for (int i = 0; i < s.size(); i++) {
+//         hash[s[i]]++;
+//     }
+//     int q;
+//     cin >> q;
+//     while (q--) {
+//         char c;
+//         cin >> c;
+//         // fetch:
+//         cout << hash[c] << endl;
+//     }
+//     return 0;
+// }
+// Input:
+// abcdabehf
+// 5
+// a
+// g
+// h
+// b
+// c
+// Output: 
+// 2
+// 0
+// 1
+// 2
+// 1
+
+
+// How to hash large numbers like 109 or higher?
+// Using maps
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     int n;
+//     cin >> n;
+//     int arr[n];
+//     for (int i = 0; i < n; i++) {
+//         cin >> arr[i];
+//     }
+//     //precompute:
+//     map<int, int> mp;
+//     for (int i = 0; i < n; i++) {
+//         mp[arr[i]]++;
+//     }
+//     // iterate over the map:
+//     /* for(auto it : mp){
+//             cout << it.first << "->" << it.second << endl;
+//         }
+//     */
+//     int q;
+//     cin >> q;
+//     while (q--) {
+//         int number;
+//         cin >> number;
+//         // fetch:
+//         cout << mp[number] << endl;
+//     }
+//     return 0;
+// }
+// Input: 
+// 7
+// 1 2 3 1 3 2 12
+// 5
+// 1 2 3 4 12
+// Output: 
+// 2
+// 2
+// 2
+// 0
+// 1
+
+
+// Find the highest/lowest frequency element
+// Brute Force (using 2 loops)
+// #include <bits/stdc++.h>
+// using namespace std;
+// void countFreq(int arr[], int n)
+// {
+//     vector<bool> visited(n, false);
+//     int maxFreq = 0, minFreq = n;
+//     int maxEle = 0, minEle = 0;
+//     for (int i = 0; i < n; i++) {
+//         // Skip this element if already processed
+//         if (visited[i] == true)
+//             continue;
+//         // Count frequency
+//         int count = 1;
+//         for (int j = i + 1; j < n; j++) {
+//             if (arr[i] == arr[j]) {
+//                 visited[j] = true;
+//                 count++;
+//             }
+//         }
+//         if (count > maxFreq) {
+//             maxEle = arr[i];
+//             maxFreq = count;
+//         }
+//         if (count < minFreq) {
+//             minEle = arr[i];
+//             minFreq = count;
+//         }
+//     }
+//     cout << "The highest frequency element is: " << maxEle << "\n";
+//     cout << "The lowest frequency element is: " << minEle << "\n";
+// }
+
+// Using Map
+// #include <bits/stdc++.h>
+// using namespace std;
+// void Frequency(int arr[], int n)
+// {
+//     unordered_map<int, int> map;
+//     for (int i = 0; i < n; i++)
+//         map[arr[i]]++;
+//     int maxFreq = 0, minFreq = n;
+//     int maxEle = 0, minEle = 0;
+//     // Traverse through map to find the elements.
+//     for (auto it : map) {
+//         int count = it.second;
+//         int element = it.first;
+//         if (count > maxFreq) {
+//             maxEle = element;
+//             maxFreq = count;
+//         }
+//         if (count < minFreq) {
+//             minEle = element;
+//             minFreq = count;
+//         }
+//     }
+//     cout << "The highest frequency element is: " << maxEle << "\n";
+//     cout << "The lowest frequency element is: " << minEle << "\n";
+// }
+// int main()
+// {
+//     int arr[] = {10, 5, 10, 15, 10, 5};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+//     countFreq(arr, n);
+//     return 0;
+// }
+
+
+// Count frequency of each element in the array (Using 2 Loops)
+// #include <bits/stdc++.h>
+// using namespace std;
+ 
+// void countFreq(int arr[], int n)
+// {
+//     vector<bool> visited(n, false);
+ 
+//     for (int i = 0; i < n; i++) {
+ 
+//         // Skip this element if already processed
+//         if (visited[i] == true)
+//             continue;
+ 
+//         // Count frequency
+//         int count = 1;
+//         for (int j = i + 1; j < n; j++) {
+//             if (arr[i] == arr[j]) {
+//                 visited[j] = true;
+//                 count++;
+//             }
+//         }
+//         cout << arr[i] << " " << count << endl;
+//     }
+// }
+ 
+// int main()
+// {
+//     int arr[] = {10,5,10,15,10,5};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+//     countFreq(arr, n);
+//     return 0;
+// }
+
+// Using Map
+// #include <bits/stdc++.h>
+// using namespace std;
+// void Frequency(int arr[], int n)
+// {
+//     unordered_map<int, int> map;
+//     for (int i = 0; i < n; i++)
+//         map[arr[i]]++;
+//     // Traverse through map and print frequencies
+//     for (auto x : map)
+//         cout << x.first << " " << x.second << endl;
+// }
+// int main()
+// {
+//     int arr[] = {10,5,10,15,10,5};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+//     Frequency(arr, n);
+//     return 0;
+// }
+
 // Find first and last occurence of any number in an array
 // #include <iostream>
 // using namespace std;
