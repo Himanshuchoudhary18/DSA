@@ -5284,7 +5284,7 @@
 // 2
 // 1
 
-// Character occurence if the string contains only lowercase:
+// Character occurence if the string contains only uppercase
 // #include <bits/stdc++.h>
 // using namespace std;
 // int main() {
@@ -5343,7 +5343,7 @@
 // 1
 
 
-// How to hash large numbers like 109 or higher?
+// How to hash large numbers like 10^9 or higher?
 // Using maps
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -5507,6 +5507,88 @@
 //     int arr[] = {10,5,10,15,10,5};
 //     int n = sizeof(arr) / sizeof(arr[0]);
 //     Frequency(arr, n);
+//     return 0;
+// }
+
+// // Merge Sort
+// #include <iostream>
+// using namespace std;
+// void merge(int arr[], int start, int end)
+// {
+//     int mid = start + (end - start) / 2;
+//     int len1 = mid - start + 1;   // This is for left side
+//     int len2 = end - mid;         // This is for right side
+
+//     int *ptr = new int[len1];     // creating new array after diving them
+//     int *ptrr = new int[len2];    // creating new array after dividing them
+
+//     int mainArrayIndex = start;
+//     // This for loop will help in putting element of left side after dividing by mid in left array
+//     for (int i = 0; i < len1; i++)
+//     {
+//         ptr[i] = arr[mainArrayIndex++];
+//     }
+//     mainArrayIndex = mid + 1;
+//     // This for loop will help in putting element of right side after dividing by mid in right array
+//     for (int i = 0; i < len2; i++)
+//     {
+//         ptrr[i] = arr[mainArrayIndex++];
+//     }
+//     // Merge 2 sorted array concept using here
+//     int index1 = 0;
+//     int index2 = 0;
+//     mainArrayIndex = start;
+//     while (index1 < len1 && index2 < len2)
+//     {
+//         if (ptr[index1] < ptrr[index2])
+//         {
+//             arr[mainArrayIndex++] = ptr[index1++];
+//         }
+//         else
+//         {
+//             arr[mainArrayIndex++] = ptrr[index2++];
+//         }
+//     }
+//     while (index1 < len1)
+//     {
+//         arr[mainArrayIndex++] = ptr[index1++];
+//     }
+//     while (index2 < len2)
+//     {
+//         arr[mainArrayIndex++] = ptrr[index2++];
+//     }
+// }
+// int sort(int arr[], int start, int end)
+// {
+//     if (start >= end)
+//     {
+//         return 0;
+//     }
+//     int mid = start + (end - start) / 2;
+//     // Left side sorting
+//     sort(arr, start, mid);
+//     // Right part sorting
+//     sort(arr, mid + 1, end);
+//     // Merge
+//     merge(arr, start, end);
+// }
+// int main()
+// {
+//     int num;
+//     cout << "Enter size of array : ";
+//     cin >> num;
+//     int arr[] = {2, 44, 3, 55, 5};
+//     cout << "Array Before Merge Sort : \n";
+//     for (int i = 0; i < 5; i++)
+//     {
+//         cout << arr[i] << endl;
+//     }
+//     cout << "Array After Merge Sort : \n";
+//     sort(arr, 0, num - 1);
+//     for (int i = 0; i < 5; i++)
+//     {
+//         cout << arr[i] << endl;
+//     }
 //     return 0;
 // }
 
