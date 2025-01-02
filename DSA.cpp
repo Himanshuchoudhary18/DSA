@@ -3,7 +3,7 @@
 // using namespace std;
 // int main()
 // {
-//     unsigned int a = -5; //This will give you value of ASCII code
+//     unsigned int a = -5; //This will give you value of ASCII code When you try to assign a negative number (like -5) to an unsigned int, the computer can't store that negative number directly. Instead, it wraps around to a large positive value due to how numbers are stored in memory.
 //     // unsigned int a = 15; //This will give you value of ASCII code, so in +ve integers the ASCII value is same
 //     cout<<a<<endl;
 //     return 0;
