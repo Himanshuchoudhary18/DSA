@@ -1,4 +1,4 @@
-// Unsigne Example 1
+// Unsigned
 // #include <bits/stdc++.h>
 // using namespace std;
 // int main()
