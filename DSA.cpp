@@ -1432,14 +1432,14 @@
 // {
 // 	int n;
 // 	cin >> n;
-// 	for(int i = 0; i < n; i++){
-// 	    int space = 0;
+// 	for(int i = 1; i <= n; i++){
+// 	    int space = 1;
 // 	    while(space <= i - 1)
 // 	    {
 // 	        cout << " ";
 // 	        space++;
 // 	    }
-// 	    for(int j = 1; j <= n - i; j++)
+// 	    for(int j = 1; j <= n - i + 1; j++)
 // 	    {
 // 	        cout << "*";
 // 	    }
@@ -1508,7 +1508,7 @@
 //                 cout<<" ";
 //             }
 //             //star
-//             for(int j = 1; j <= (2 * i - 1); j++)
+//             for(int j = 1; j <= i; j++)
 //             // If starting from j = 1; then we have to use (j <= 2 * i - 1);
 //             {
 //                 cout << "*";
@@ -1516,7 +1516,7 @@
 //             cout << endl;
 //         }
 //         //below pattern
-//         for(int i = 0; i < n; i++)
+//         for(int i = 1; i <= n; i++)
 //         {
 //             //space
 //             int space = 0;
@@ -1526,7 +1526,7 @@
 //                 space++;
 //             }
 //             //star
-//             for(int j = 1; j <= 2 * n - (2 * i - 1); j++)
+//             for(int j = 1; j <= n - i + 1; j++)
 //             {
 //                 cout << "*";
 //             }
