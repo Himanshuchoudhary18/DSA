@@ -3207,7 +3207,9 @@
 //     int upperbound = upper_bound(arr, arr + n, key) - arr;
 //     int lowerbound = lower_bound(arr, arr + n, key) - arr;
 //     int occurence_of_an_element = upperbound - lowerbound;
-//     if (upperbound >= 0 && lowerbound >= 0 && arr[upperbound] == key && arr[lowerbound] == key)
+//     // arr[upperbound] is indeed incorrect because upper_bound returns the index just past the last occurrence of the key. As such, accessing arr[upperbound] in that condition is not meaningful and might cause out-of-bounds access if the key is the largest element in the array.
+//     // if (upperbound >= 0 && lowerbound >= 0 && arr[upperbound] == key && arr[lowerbound] == key)
+//     if(occurrence_of_an_element > 0)
 //     {
 //         cout << occurence_of_an_element << endl; 
 //     }
