@@ -5064,7 +5064,7 @@
 // class Solution {
 // public:
 //     int removeDuplicates(vector<int>& nums) {
-//         // This is the array {1, 2, 1, 2, 3, 0, 5, 6} we will start i and j from 0th index
+//         // This is the array {1, 2, 2, 3, 4, 5, 6} we will start i and j from 0th index
 //         int j = 0;
 //         // Now, we will move i forward and compare that whether the element at ith index is same to jth index
 //         for(int i = 0; i < nums.size(); i++)
