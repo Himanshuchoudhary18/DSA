@@ -5083,6 +5083,24 @@
 //     }
 // };
 
+// class Solution {
+// public:
+//     int removeDuplicates(vector<int>& nums) {
+//        map<int,int> hash;
+//        int n = nums.size();
+//        for(int i = 0; i < n; i++){
+//         hash[nums[i]]++;
+//        } 
+//        int indx = 0;
+//        for(auto x:hash){
+//             if(x.second>0){
+//                 nums[indx++]=x.first;
+//             }
+//         }
+//         return indx;
+//     }
+// };
+
 // Find Intersection b/w 2 arrays
 // #include <iostream>
 // using namespace std;
