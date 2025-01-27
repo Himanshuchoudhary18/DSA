@@ -2959,6 +2959,195 @@
 //     return 0;
 // }
 
+// Find Largest and smallest element from the array?
+// #include <bits/stdc++.h>
+ 
+// using namespace std;
+// int findLargestElement(int arr[], int n) {
+ 
+//   int max = arr[0];
+//   for (int i = 0; i < n; i++) {
+//     if (max < arr[i]) {
+//       max = arr[i];
+//     }
+//   }
+//   return max;
+// }
+// int findSmallestElement(int arr[], int n)
+// {
+//     int mini = arr[n - 1];
+//     for(int i = 0; i < n; i++)
+//     {
+//         if(arr[i] < mini)
+//         {
+//             mini = arr[i];
+//         }
+//     }
+//     return mini;
+// }
+// int main() {
+//   int arr1[] = {2,5,1,3,0};
+//   int n = 5;
+//   int max = findLargestElement(arr1, n);
+//   cout << "The largest element in the array is: " << max << endl;
+ 
+//   int mini = findSmallestElement(arr1, n);
+//   cout << "The smallest element in the array is: " << mini<<endl;
+//   return 0;
+// }
+
+// 2nd approach
+// #include<bits/stdc++.h>
+// using namespace std;
+ 
+// int sortArr(vector<int>& arr) {
+//     sort(arr.begin(),arr.end());
+//     return arr[arr.size()-1];
+// }
+ 
+// int main() {
+//     vector<int> arr1 = {2,5,1,3,0};
+//     vector<int> arr2 = {8,10,5,7,9};
+   
+//     cout<<"The Largest element in the array is: "<<sortArr(arr1)<<endl;
+//     cout<<"The Largest element in the array is: "<<sortArr(arr2);
+   
+//     return 0;
+// }
+
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int findMinUsingSort(vector<int>& arr) {
+//   // Sort the vector in ascending order
+//   sort(arr.begin(), arr.end());
+
+//   // The first element after sorting will be the minimum
+//   return arr[0];
+// }
+
+// int main() {
+//   vector<int> arr1 = {2, 5, 1, 3, 0};
+//   vector<int> arr2 = {8, 10, 5, 7, 9};
+
+//   cout << "The Minimum element in arr1 using sort: " << findMinUsingSort(arr1) << endl;
+//   cout << "The Minimum element in arr2 using sort: " << findMinUsingSort(arr2) << endl;
+
+//   return 0;
+// }
+
+
+// Check whether the array is sorted or not?
+// #include <bits/stdc++.h> 
+// using namespace std;
+// bool isSorted(int arr[], int size)
+// {
+//     for(int i = 0; i < size; i++)
+//     {
+//         for(int j = i + 1; j < size; j++)
+//         {
+//             if(arr[i] > arr[j])
+//             {
+//                 return false;
+//             }
+//         }
+//     }
+//     return true;
+    
+    
+//     // More optimized (Approach)
+//     for(int i = 0; i < size; i++)
+//     {
+//         if(arr[i] < arr[i - 1])
+//         {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// int main()
+// {
+//     int size = 5;
+//     int arr[size] = {1, 4, 5, 7, 88};
+//     if(isSorted(arr, size))
+//     {
+//         cout << "The array is sorted";
+//     }
+//     else
+//     {
+//         cout << "The array is not sorted";
+//     }
+// }
+
+// Shift first element to the last
+// #include <bits/stdc++.h>
+// using namespace std;
+// void solve(int arr[], int n) {
+//     // Brute force Method
+//     int temp[n];
+//     // for(int i = 0; i < n - 1; i++)
+//     for(int i = 1; i < n; i++)
+//     {
+//         // temp[i] = arr[i + 1];
+//         // OR //
+//         temp[i - 1] = arr[i];
+//     }
+//     temp[n - 1] = arr[0];
+//     for(int i = 0; i < n; i++)
+//     {
+//         cout << temp[i] << " ";
+//     }
+// }
+
+
+// void solve(int arr[], int n) {
+//     int temp = arr[0];
+//     for(int i = 0; i < n - 1; i++)
+//     {
+//         arr[i] = arr[i + 1];
+//     }
+//     arr[n - 1] = temp;
+//     for(int i = 0; i < n; i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+// }
+// int main() {
+//   int n = 5;
+//   int arr[n]= {1,2,3,4,5};
+//   solve(arr, n);
+// }
+
+// Find max. number of consecutive one's in an array?
+// #include <bits/stdc++.h>
+// using namespace std;
+// class Solution {
+//   public:
+//     int findMaxConsecutiveOnes(vector<int> & nums) {
+//       int cnt = 0;
+//       int maxi = 0;
+//       // Iterate through the vector
+//       for (int i = 0; i < nums.size(); i++) {
+//         if (nums[i] == 1) {
+//           cnt++; // Increment count of consecutive 1's
+//         } else {
+//           cnt = 0; // Reset count if current element is 0
+//         }
+//         maxi = max(maxi, cnt); // Update maximum count
+//       }
+//       return maxi; // Return the maximum number of consecutive 1's
+//     }
+// };
+
+// int main() {
+//   vector<int> nums = {1, 1, 0, 1, 1, 1};
+//   Solution obj;
+//   int ans = obj.findMaxConsecutiveOnes(nums);
+//   cout << "The maximum consecutive 1's are " << ans;
+//   return 0;
+// }
+
 // Calculate no. of times element occured in a data structure
 // #include <bits/stdc++.h>
 // using namespace std;
