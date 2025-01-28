@@ -5686,6 +5686,241 @@
 //     return 0;
 // }
 
+// Find union of 2 sorted arrays
+// Time Complexity: O(m*log(m) + n*log(n)), where ‘m’ and ‘n’ are the size of the arrays
+// Auxiliary Space: O(m + n)
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// // Function to return the union of two arrays
+// vector<int> Unionarray(int arr1[], int arr2[], int n, int m)
+// {
+//     set<int> s;
+//     // Remove the duplicates from arr1[]
+//     for (int i = 0; i < n; i++) {
+//         s.insert(arr1[i]);
+//     }
+
+//     // Remove duplicates from arr2[]
+//     for (int i = 0; i < m; i++) {
+//         s.insert(arr2[i]);
+//     }
+
+//     // Loading set to vector
+//     vector<int> vec(s.begin(), s.end());
+
+//     return vec;
+// }
+
+// // Driver code
+// int main()
+// {
+//     int arr1[] = { 1, 2, 2, 2, 3 };
+//     int arr2[] = { 2, 3, 3, 4, 5, 5 };
+//     int n = sizeof(arr1) / sizeof(arr1[0]);
+//     int m = sizeof(arr2) / sizeof(arr2[0]);
+
+//     // Function call
+//     vector<int> uni = Unionarray(arr1, arr2, n, m);
+//     for (int i : uni) {
+//         cout << i << " ";
+//     }
+
+//     return 0;
+// }
+
+// find union of two sorted arrays (2nd Approach)
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// /* Function prints union of arr1[] and arr2[]
+//    m is the number of elements in arr1[]
+//    n is the number of elements in arr2[] */
+// void printUnion(int arr1[], int arr2[], int m, int n)
+// {
+//     int i = 0, j = 0;
+//     while (i < m && j < n) {
+//         if (arr1[i] < arr2[j])
+//             cout << arr1[i++] << " ";
+
+//         else if (arr2[j] < arr1[i])
+//             cout << arr2[j++] << " ";
+
+//         else {
+//             cout << arr1[i++] << " ";
+//             // i++;
+//             // OR //
+//             // cout << arr2[j++] << " ";
+//             j++;
+//             // i++;
+//         }
+//     }
+
+//     /* Print remaining elements of the larger array */
+//     while (i < m)
+//         cout << arr1[i++] << " ";
+
+//     while (j < n)
+//         cout << arr2[j++] << " ";
+// }
+
+// /* Driver program to test above function */
+// int main()
+// {
+//     int arr1[] = { 1, 2, 4, 5, 6 };
+//     int arr2[] = { 2, 3, 5, 7 };
+
+//     int m = sizeof(arr1) / sizeof(arr1[0]);
+//     int n = sizeof(arr2) / sizeof(arr2[0]);
+
+//     // Function calling
+//     printUnion(arr1, arr2, m, n);
+
+//     return 0;
+// }
+// Time Complexity : O(m + n)
+// Auxiliary Space: O(1)
+
+
+// 3rd Approach
+// #include <bits/stdc++.h>
+// using namespace std;
+ 
+// // Function to return the union of two arrays
+// vector<int> Unionarray(int arr1[], int arr2[], int n, int m)
+// {
+//     map<int, int> map;
+     
+//     // Remove the duplicates from arr1[]
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (map.find(arr1[i]) != map.end())
+//         {
+//             map[arr1[i]]++;
+//         }
+//         else
+//         {
+//             map[arr1[i]] = 1;
+//         }
+//     }
+   
+//     // Remove duplicates from arr2[]
+//     for (int i = 0; i < m; i++)
+//     {
+//         if (map.find(arr2[i]) != map.end())
+//         {
+//             map[arr2[i]]++;
+//         }
+//         else
+//         {
+//             map[arr2[i]] = 1;
+//         }
+//     }
+   
+//     // Loading set to vector
+//     vector<int> list;
+//     for (auto i : map)
+//     {
+//         list.push_back(i.first);
+//     }
+  
+//     return list;
+// }
+   
+// // Driver code
+// int main()
+// {
+//     int arr1[] = { 1, 2, 2, 2, 3 };
+//     int arr2[] = {2, 3, 3, 4, 5, 5 };
+//     int n = sizeof(arr1)/sizeof(arr1[0]);
+//     int m = sizeof(arr2)/sizeof(arr2[0]);
+//     cout << "Union is :"<<endl;
+     
+//     // Function call
+//     vector<int> uni = Unionarray(arr1, arr2, n, m);
+//     for (auto i : uni)
+//     {
+//         cout << i << " ";
+//     }
+//     return 0;
+// }
+
+// Time Complexity:O(m*log(m) + n*log(n)), where ‘m’ and ‘n’ are the size of the arrays
+// Auxiliary Space: O(m + n)
+
+
+// Find the element which is present once in the array and rest are present more than once?
+// Brute Force ((T.C -> O(n^2) & (S.C -> O(1))
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int findSingleElement(const vector<int>& arr) {
+//     int n = arr.size();
+
+//     for (int i = 0; i < n; i++) {
+//         int count = 0;
+
+//         // Compare arr[i] with all elements in the array
+//         for (int j = 0; j < n; j++) {
+//             if (arr[i] == arr[j]) {
+//                 count++;
+//             }
+//         }
+
+//         // If count is 1, it means the element occurs only once
+//         if (count == 1) {
+//             return arr[i];
+//         }
+//     }
+
+//     return -1;  // In case no unique element exists
+// }
+
+// int main() {
+//     vector<int> arr = {4, 3, 2, 4, 1, 3, 2};
+//     cout << "The single element is: " << findSingleElement(arr) << endl;
+//     return 0;
+// }
+
+
+// 2nd Approach (t.C -> O(n) & S.C -> O(1))
+// #include <bits/stdc++.h>
+// using namespace std;
+// int getSingleElement(vector<int> &arr)
+// {
+//     // 1st Method
+//     // int ans = 0;
+//     // for(int i = 0; i < arr.size(); i++)
+//     // {
+//     //     ans = ans ^ arr[i];
+//     // }
+//     // return ans;
+    
+//     // 2nd Method
+//     map<int, int> map;
+    
+//     for(int i = 0; i < arr.size(); i++)
+//     {
+//         map[arr[i]]++;
+//     }
+    
+//     for(auto it : map)
+//     {
+//         if(it.second == 1)
+//         {
+//             cout << "The element that is present once is : "<< it.first;
+//         }
+//     }
+//     return -1;
+// }
+// int main()
+// {
+//     vector<int> arr = {4, 1, 2, 1, 2};
+//     int ans = getSingleElement(arr);
+//     cout << ans << " ";
+//     return 0;
+// }
+
 
 // Count frequency of each element in the array (Using 2 Loops)
 // #include <bits/stdc++.h>
@@ -5721,7 +5956,7 @@
 //     return 0;
 // }
 
-// Using Map
+// Using Map (T.C -> O(n) & S.C -> O(n))
 // #include <bits/stdc++.h>
 // using namespace std;
 // void Frequency(int arr[], int n)
@@ -5740,6 +5975,8 @@
 //     Frequency(arr, n);
 //     return 0;
 // }
+
+
 
 // // Merge Sort
 // #include <iostream>
@@ -5819,6 +6056,171 @@
 //     for (int i = 0; i < 5; i++)
 //     {
 //         cout << arr[i] << endl;
+//     }
+//     return 0;
+// }
+
+// Find Second Largest and Second Smallest Element in the array
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// void findSecondLargestAndSecondSmallest(vector<int>& arr, int &secondLargest, int &secondSmallest) {
+//     // Handle the edge case where the array has less than 2 elements
+//     if (arr.size() < 2) {
+//         secondLargest = -1;  // Indicate no second largest element
+//         secondSmallest = -1;  // Indicate no second smallest element
+//         return;
+//     }
+
+//     // Step 1: Initialize variables to store the largest, second largest, smallest, and second smallest values
+//     int largest = arr[0];
+//     int smallest = arr[0];
+//     secondLargest = -1;  // Use -1 to indicate not found yet
+//     secondSmallest = -1;  // Use -1 to indicate not found yet
+
+//     // Step 2: Single pass to find the largest, second largest, smallest, and second smallest elements
+//     for (int num : arr) {
+//         // For largest and second largest
+//         if (num > largest) {
+//             secondLargest = largest;
+//             largest = num;
+//         } else if (num > secondLargest && num < largest) {
+//             secondLargest = num;
+//         }
+//         // For smallest and second smallest
+//         if (num < smallest) {
+//             secondSmallest = smallest;
+//             smallest = num;
+//         } else if (num < secondSmallest && num > smallest) {
+//             secondSmallest = num;
+//         }
+//     }
+// }
+
+// int main() {
+//     vector<int> arr = {13, 24, 15, 12};
+
+//     int secondLargest;
+//     int secondSmallest;
+//     findSecondLargestAndSecondSmallest(arr, secondLargest, secondSmallest);
+//     if (secondLargest != -1) {
+//        cout << "The second largest element is " << secondLargest << std::endl;
+//     } else {
+//         cout << "There is no second largest element." << endl;
+//     }
+//     if (secondSmallest != -1) {
+//         cout << "The second smallest element is " << secondSmallest << endl;
+//     } else {
+//         cout << "There is no second smallest element." << endl;
+//     }
+//     return 0;
+// }
+
+
+// 2nd Approach (T.C -> O(n) & S.C -> O(1))
+// #include <bits/stdc++.h>
+// using namespace std;
+// int findSecondLargest(vector<int>& arr) {
+//     // Step 1: Initialize variables to store the largest and second largest values
+//     int largest = INT_MIN;
+//     int secondLargest = INT_MIN;
+
+//     // Step 2: First pass to find the largest element
+//     for (int num : arr) {
+//         if (num > largest) {
+//             largest = num;
+//         }
+//     }
+
+//     // Step 3: Second pass to find the second largest element
+//     for (int num : arr) {
+//         if (num > secondLargest && num < largest) {
+//             secondLargest = num;
+//         }
+//     }
+//     return secondLargest;
+// }
+
+// int main() {
+//     vector<int> arr = {3, 5, 2, 9, 6, 19, 19};
+
+//     int result = findSecondLargest(arr);
+
+//     if (result != INT_MIN) {
+//         cout << "The second largest element is " << result << endl;
+//     } else {
+//         cout << "There is no second largest element." << endl;
+//     }
+//     return 0;
+// }
+
+// Same code but proper answer
+// #include <bits/stdc++.h>
+// using namespace std;
+// void findSecondLargestAndSecondSmallest(int n, vector<int>& arr, int &secondLargest, int &secondSmallest) {
+//     // Step 1: Initialize variables to store the largest and second largest values
+//     // int largest = arr[0];
+//     // int secondLargest = INT_MIN;
+
+//     // // Step 2: First pass to find the largest element
+//     // for (int i = 0; i < n; i++) {
+//     //     if (arr[i] > largest) {
+//     //         largest = arr[i];     // 19 is the first largest
+//     //     }
+//     // }
+
+//     // // Step 3: Second pass to find the second largest element
+//     // for (int i = 0; i < n; i++) {
+//     //     if (arr[i] > secondLargest && arr[i] < largest) {
+//     //         secondLargest = arr[i];
+//     //     }
+//     // }
+//     // return secondLargest;
+    
+//     int largest = arr[0];
+//     int smallest = arr[0];
+//     for(int i = 0; i < n; i++)
+//     {
+//         if(arr[i] > largest)
+//         {
+//             secondLargest = largest;
+//             largest = arr[i];
+//         }
+//         else if(arr[i] > secondLargest && arr[i] < largest)
+//         {
+//             secondLargest = arr[i];
+//         }
+//     }
+    
+//     for(int i = 0; i < n; i++)
+//     {
+//         if(arr[i] < smallest)
+//         {
+//             secondSmallest = smallest;
+//             smallest = arr[i];
+//         }
+//         else if(arr[i] < secondSmallest && arr[i] > smallest)
+//         {
+//             secondSmallest = arr[i];
+//         }
+//     }
+// }
+
+// int main() {
+//     vector<int> arr = {3, 5, 2, 9, 6, 19, 19};
+
+//     int secondLargest;
+//     int secondSmallest;
+//     findSecondLargestAndSecondSmallest(7, arr, secondLargest, secondSmallest);
+//     if (secondLargest != -1) {
+//        cout << "The second largest element is " << secondLargest << std::endl;
+//     } else {
+//         cout << "There is no second largest element." << endl;
+//     }
+//     if (secondSmallest != -1) {
+//         cout << "The second smallest element is " << secondSmallest << endl;
+//     } else {
+//         cout << "There is no second smallest element." << endl;
 //     }
 //     return 0;
 // }
