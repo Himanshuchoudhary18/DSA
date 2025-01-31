@@ -2246,7 +2246,8 @@
 //     int b;
 //     cin >> a;
 //     cin >> b;
-//     int ans = 1;
+//     // using long long to handle big numbers
+//     long long ans = 1;
 //     for (int i = 1; i <= b; i++)
 //     {
 //         ans = ans * a;
