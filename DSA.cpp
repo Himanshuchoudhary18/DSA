@@ -2265,6 +2265,12 @@
 // Algorithms: The STL provides a range of algorithms, such as sort, find, and binary_search, which can be used to manipulate data stored in containers.
 // Iterators: Iterators are objects that provide a way to traverse the elements of a container. The STL provides a range of iterators, such as forward_iterator, reverse_iterator, bidirectional_iterator and random_access_iterator, that can be used with different types of containers.
 // Function Objects: Function objects, also known as functors, are objects that can be used as function arguments to algorithms. They provide a way to pass a function to an algorithm, allowing you to customize its behavior.
+// Fpr ex -> Functors are widely used in STL algorithms like:
+// std::sort()
+// std::for_each()
+// std::transform()
+// std::priority_queue
+// std::map
 // Adapters: Adapters are components that modify the behavior of other components in the STL. For example, the reverse_iterator adapter can be used to reverse the order of elements in a container.
 
 // #include <bits/stdc++.h>
