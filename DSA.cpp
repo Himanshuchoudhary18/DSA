@@ -2271,6 +2271,25 @@
 // std::transform()
 // std::priority_queue
 // std::map
+
+
+// Example
+// #include <iostream>
+// #include <queue>
+
+// int main() {
+//     std::priority_queue<int, std::vector<int>, std::greater<int>> pq; // Min-heap
+
+//     pq.push(10);
+//     pq.push(30);
+//     pq.push(20);
+
+//     while (!pq.empty()) {
+//         std::cout << pq.top() << " "; // Output: 10 20 30
+//         pq.pop();
+//     }
+// }
+
 // Adapters: Adapters are components that modify the behavior of other components in the STL. For example, the reverse_iterator adapter can be used to reverse the order of elements in a container.
 
 // #include <bits/stdc++.h>
