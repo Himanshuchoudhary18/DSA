@@ -107,6 +107,7 @@
 //         // But, here it will prove that it is divisible by numbers other than 1 and itself
 //         if (num % i == 0)
 //         {
+//             // But if we have to check "how many are prime numbers" then we can let this loop run till the n - 1 and then at the end return check; instead of break; statement
 //             check++;
 //             // STEP 4 : Then break statement to stop the loop because, we only needed that number which is divisible by any other number once we get that we can stop the loop because that number is not the prime number for sure
 //             break;
@@ -133,51 +134,129 @@
 //     return 0;
 // }
 
-// Best optimized solution for finding prime number
+// Little better code (till root n) Usable for n ≤ 10^8 range
 // #include <bits/stdc++.h>
 // using namespace std;
-// bool isPrime(int n)
+// bool isPrime(long long n)
 // {
-//     // Write your code here
-//     int c = 0;
-//     // 1 se ya fir 0 se chalao loop toh number definitely 0 ya 1 se divisible toh hoga hi hence we put 2 conditions 
-//     for (int i = 1; i <= sqrt(n); i++) 
-//     {
-//         // ye base case lgane ka jarurat nhi hain agar neeche 2 if conditions lage hue hain
-//         if(n == 0 || n == 1){
-//             return false;
-//         }
-//         else
-//         {
-//             // If n is divisible by i and giving remainder == 0 then we will check is it divisble by other number also if yes then n/i == i and if true so count += 1 else count += 2
-//             if (n % i == 0) {
-                
-//                 if (n / i == i)
-//                 {
-//                     c++;
-//                 }
-//                 else
-//                 {
-//                     c += 2;
-//                 }
-//             }
-//         }
-//     }
-//     if (c == 2) {
-//           return true;
-//     } 
-//     else
+//     // Base case
+//     if(n == 0 || n == 1)
 //     {
 //         return false;
+//     }
+//     // Remaining cases
+//     else
+//     {
+//         for(long long i = 2; i <= sqrt(n); i++)
+//         {
+//             if(n % i == 0)
+//             {
+//                 return false;
+//                 break;
+//             }
+//         }
+//         return true;
 //     }
 // }
 // int main()
 // {
+//     long long n;  // 5
+//     cout << "Enter the number to check it is prime or not : ";
+//     cin >> n;
+//     if(isPrime(n))
+//     {
+//         cout << "It is a Prime Number";
+//     }
+//     else
+//     {
+//         cout << "It is not a Prime number";
+//     }
+// }
+
+// Better optimized solution for finding prime number (using divisor count) usable for n ≤ 10^8 range
+// #include <bits/stdc++.h>
+// using namespace std;
+// bool isPrime(int n) {
+//     if (n <= 1) return false;
+//     int c = 0;
+//     for (int i = 2; i <= sqrt(n); i++) {
+//         if (n % i == 0) {
+//             if (n / i == i)
+//                 c++;
+//             else
+//                 c += 2;
+//         }
+//     }
+//     c += 2; 
+//     return c == 2;
+// }
+// int main() {
 //     int n;
 //     cin >> n;
-//     cout << isPrime(n) << endl;
+//     cout << (isPrime(n) ? "Prime" : "Not Prime") << endl;
 //     return 0;
 // }
+
+
+// 1. Sieve of Eratosthenes
+// Time Complexity:
+// O(N log log N)
+// Space Complexity: O(N)
+// Efficient Up To:
+// N≈ 10^7 to 10^8 on most modern machines with reasonable memory.
+// Why:
+// The Sieve of Eratosthenes requires storing an array of size N, which becomes memory-intensive for very large values of N. Beyond 108, the space requirements make it impractical unless optimizations like segmented sieves or parallel processing are used.
+
+// 2. Miller-Rabin Primality Test
+// Time Complexity:
+// O(k log3 n), where k is the number of iterations (typically 5–10 for good accuracy)
+// Efficient Up To:
+// n≈ 10^100 or more
+// Why:
+// The Miller-Rabin test is a probabilistic primality test that works efficiently even for numbers with
+// hundreds of digits. The runtime grows with the logarithm of n, making it highly suitable for very large numbers.
+// Optimization Note:
+// For numbers < 264, Miller-Rabin can be made deterministic using a predefined set of bases, turning it into a fully reliable test in those ranges.
+
+// 3. Trial Division
+// Time Complexity: O(√n)
+// Efficient Up To: n≈ 10^6 to 10^7
+// Why:
+// This method checks divisibility by every integer up to √n, which becomes very slow for larger n. For numbers larger than 107, the number of divisions becomes excessive, making the method impractical.
+// Summary of Use-Cases
+// Task
+// Generating primes
+// Checking primality (small)
+// Checking primality (large)
+// Best Method
+// Efficient Range
+// Sieve of Eratosthenes
+// Up to 10^7-10^8
+// Trial Division
+// Up to 10^6-10^7
+// Miller-Rabin Tes
+// > 10^7, up to 10^100+
+
+// | **Aspect**                                   | **Sieve of Eratosthenes**                                            | **Miller-Rabin Primality Test**                                         | **Trial Division (using $\sqrt{n}$)**                    |
+// | -------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------- |
+// | **Purpose**                                  | Generate all primes up to a given number $N$.                        | Check if a single number $n$ is prime.                                  | Check if a single number $n$ is prime.                   |
+// | **Algorithm Type**                           | Sieve algorithm (deterministic)                                      | Probabilistic primality test                                            | Deterministic (based on division)                        |
+// | **Time Complexity (for finding primes)**     | $O(N \log \log N)$                                                   | $O(k \log^3 n)$ for $k$ iterations                                      | $O(\sqrt{n})$                                            |
+// | **Time Complexity (for checking primality)** | N/A (used for generating primes)                                     | $O(k \log^3 n)$ where $k$ is the number of iterations                   | $O(\sqrt{n})$                                            |
+// | **Space Complexity**                         | $O(N)$ (storing primes or marking sieve array)                       | $O(1)$ (constant space for checks)                                      | $O(1)$                                                   |
+// | **Best Use Case**                            | Generating a list of primes up to $N$.                               | Fast primality test for large numbers (with error bounds)               | Small numbers or when checking a single prime            |
+// | **Memory Efficiency**                        | Moderate (storing sieve array for numbers up to $N$)                 | Very low (constant space)                                               | Very low (constant space)                                |
+// | **Suitability for Large $n$**                | Not suitable for very large $N$ (requires $O(N)$ space)              | Very suitable for large numbers, with trade-offs in accuracy            | Not suitable for very large $n$ due to slow running time |
+// | **Parallelism**                              | Can be parallelized for speed (e.g., sieve with multiple processors) | Can be parallelized for faster results (especially for multiple checks) | Hard to parallelize due to its sequential nature         |
+
+
+// For 𝑛 = 10^6, trial division without the square root optimization will take approximately 10^6 iterations, which might be tolerable for small calculations. For 𝑛 = 10^7, you'll have about 10^7 divisions to check, and it starts becoming noticeably slower. For 𝑛 = 10^9, the number of divisions will be on the order of 10^9, which is too slow for practical use. Why Is This Slow? With 𝑛 optimization, you're reducing the number of checks significantly, since only divisors up to root 𝑛  need to be checked. Without it, you essentially check every integer from 2 to 𝑛 − 1, which results in a linear time complexity. 
+// | **Approach**                            | **Time Complexity** | **Efficient Up To**                               |
+// | --------------------------------------- | ------------------- | ------------------------------------------------- |
+// | **Trial Division (with $\sqrt{n}$)**    | $O(\sqrt{n})$       | Up to $10^7$ to $10^8$                            |
+// | **Trial Division (without $\sqrt{n}$)** | $O(n)$              | Up to $10^6$ (after which it becomes impractical) |
+
+// Conclusion: Trial Division without root 𝑛  : It’s very inefficient and impractical for large numbers. It’s only useful for very small numbers, perhaps up to 10^6, but even then, more optimized primality tests (like Miller-Rabin) should be considered for much larger numbers.
 
 
 // Pattern Printing
