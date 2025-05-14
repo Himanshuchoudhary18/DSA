@@ -134,7 +134,7 @@
 //     return 0;
 // }
 
-// Little better code (till root n) Usable for n ≤ 10^8 range
+// Better than previous one (Trial Version)
 // #include <bits/stdc++.h>
 // using namespace std;
 // bool isPrime(long long n)
@@ -170,7 +170,7 @@
 //     else
 //     {
 //         cout << "It is not a Prime number";
-//     }
+//     }    
 // }
 
 // Better optimized solution for finding prime number (using divisor count) usable for n ≤ 10^8 range
@@ -205,7 +205,7 @@
 // Efficient Up To:
 // N≈ 10^7 to 10^8 on most modern machines with reasonable memory.
 // Why:
-// The Sieve of Eratosthenes requires storing an array of size N, which becomes memory-intensive for very large values of N. Beyond 108, the space requirements make it impractical unless optimizations like segmented sieves or parallel processing are used.
+// The Sieve of Eratosthenes requires storing an array of size N, which becomes memory-intensive for very large values of N. Beyond 10^8, the space requirements make it impractical unless optimizations like segmented sieves or parallel processing are used.
 
 // 2. Miller-Rabin Primality Test
 // Time Complexity:
@@ -216,7 +216,7 @@
 // The Miller-Rabin test is a probabilistic primality test that works efficiently even for numbers with
 // hundreds of digits. The runtime grows with the logarithm of n, making it highly suitable for very large numbers.
 // Optimization Note:
-// For numbers < 264, Miller-Rabin can be made deterministic using a predefined set of bases, turning it into a fully reliable test in those ranges.
+// For numbers < 2^64, Miller-Rabin can be made deterministic using a predefined set of bases, turning it into a fully reliable test in those ranges.
 
 // 3. Trial Division
 // Time Complexity: O(√n)
