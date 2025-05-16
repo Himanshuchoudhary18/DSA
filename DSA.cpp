@@ -197,6 +197,52 @@
 //     return 0;
 // }
 
+// Create an array and check how many elements are prime or not?
+// #include <bits/stdc++.h>
+// using namespace std;
+// bool CountPrime(int x)
+// {
+//     int count = 0;
+//     if(x == 0 || x == 1)
+//     {
+//         return false;
+//     }
+//     else
+//     {
+//         for(int i = 2; i <= sqrt(x); i++)
+//         {
+//             if(x % i == 0)
+//             {
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+// }
+// int main()
+// {
+//     int n;
+//     cout << "Enter the size of the array : " << endl;
+//     cin >> n;
+//     int arr[n];
+//     cout << "Enter the elements in the array for checking : " << endl; 
+//     for(int i = 0; i < n; i++)
+//     {
+//         cin >> arr[i];
+//     }
+//     cout << "\nPrime check for each element:\n";
+//     for(int i = 0; i < n; i++)
+//     {
+//         if(CountPrime(arr[i]))
+//         {
+//             cout << "Prime number : " << arr[i] << endl;
+//         }
+//         else
+//         {
+//             cout << "Not a Prime are : " << arr[i] << endl;
+//         }
+//     }
+// }
 
 // 1. Sieve of Eratosthenes
 // Time Complexity:
