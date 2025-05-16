@@ -200,7 +200,7 @@
 // Create an array and check how many elements are prime or not?
 // #include <bits/stdc++.h>
 // using namespace std;
-// bool CountPrime(int x)
+// bool CountPrime(long long x)
 // {
 //     int count = 0;
 //     if(x == 0 || x == 1)
@@ -221,10 +221,10 @@
 // }
 // int main()
 // {
-//     int n;
+//     long long n;
 //     cout << "Enter the size of the array : " << endl;
 //     cin >> n;
-//     int arr[n];
+//     long long arr[n];
 //     cout << "Enter the elements in the array for checking : " << endl; 
 //     for(int i = 0; i < n; i++)
 //     {
