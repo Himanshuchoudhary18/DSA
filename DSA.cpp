@@ -173,7 +173,7 @@
 //     }    
 // }
 
-// Better optimized solution for finding prime number (using divisor count) usable for n ≤ 10^8 range
+// Better optimized solution for finding prime number (using divisor count) usable for n ≤ 10^7 range
 // #include <bits/stdc++.h>
 // using namespace std;
 // bool isPrime(int n) {
@@ -249,7 +249,7 @@
 // O(N log log N)
 // Space Complexity: O(N)
 // Efficient Up To:
-// N≈ 10^7 to 10^8 on most modern machines with reasonable memory.
+// N ≈ 10^7 to 10^8 on most modern machines with reasonable memory.
 // Why:
 // The Sieve of Eratosthenes requires storing an array of size N, which becomes memory-intensive for very large values of N. Beyond 10^8, the space requirements make it impractical unless optimizations like segmented sieves or parallel processing are used.
 
@@ -268,7 +268,7 @@
 // Time Complexity: O(√n)
 // Efficient Up To: n≈ 10^6 to 10^7
 // Why:
-// This method checks divisibility by every integer up to √n, which becomes very slow for larger n. For numbers larger than 107, the number of divisions becomes excessive, making the method impractical.
+// This method checks divisibility by every integer up to √n, which becomes very slow for larger n. For numbers larger than 10^7, the number of divisions becomes excessive, making the method impractical.
 // Summary of Use-Cases
 // Task
 // Generating primes
