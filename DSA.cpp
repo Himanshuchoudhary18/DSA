@@ -1608,6 +1608,12 @@
 // 	    {
 // 	        star = n - i;
 // 	    }
+//      // OR //
+//      we can simply run this below loop from (j = 1; j <= n - i + 1; j++) then we don't have to do the above things
+//      // for(int j = 1; j <= n - i + 1; j++)
+//	    // {
+//	    //    cout << "*" << " ";
+//	    // }
 // 	    for(int j = 1; j <= star; j++)
 // 	    {
 // 	        cout << "*" << " ";
