@@ -1589,10 +1589,9 @@
 //        *
 // #include <bits/stdc++.h>
 // using namespace std;
-// int main()
-// {
-// 	int n;
-// 	cin >> n;
+// int main(){
+//     int n;
+//     cin >> n;
 // 	for(int i = 0; i < n; i++){
 // 	    int space = 0;
 // 	    while(space <= i - 1)
@@ -1600,7 +1599,16 @@
 // 	        cout << " ";
 // 	        space++;
 // 	    }
-// 	    for(int j = 1; j <= n - i; j++)
+// 	    int star = 0;
+// 	    if(i <= 0)
+// 	    {
+// 	        star = n;
+// 	    }
+// 	    else
+// 	    {
+// 	        star = n - i;
+// 	    }
+// 	    for(int j = 1; j <= star; j++)
 // 	    {
 // 	        cout << "*" << " ";
 // 	    }
