@@ -539,11 +539,29 @@
 //     return 0;
 // }
 
-// 1 2  (j = 1)
-// 2 3 4 (j = 2)
-// 3 4 5 6 (j = 3)
-// 4 5 6 7 8 (j = 4)
-// 5 6 7 8 9 10 (j = 5)
+// Online C++ compiler to run C++ program online
+// 1 2 
+// 3 4 5 
+// 5 6 7 8 
+// 7 8 9 10 11 
+// 9 10 11 12 13 14
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     for(int i = 1; i <= n; i++)
+//     {
+//         for(int j = i; j <= 2 * i; j++)
+//         {
+//             cout << i + j - 1 << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+
 // #include <bits/stdc++.h>
 // using namespace std;
 // int main(){
@@ -26738,6 +26756,7 @@
 //         return {day, profit};
 //     }
 // };
+
 
 
 
