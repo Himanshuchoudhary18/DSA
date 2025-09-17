@@ -3707,6 +3707,30 @@
 //     return 0;
 // }
 
+// Anagrams
+// #include <bits/stdc++.h>
+// using namespace std;
+// bool checkAnagram(string &s1, string &s2)
+// {
+//     // Base case
+//     if(s1.size() != s2.size())
+//     {
+//         return 0;
+//     }
+//     else
+//     {
+//         sort(s1.begin(), s1.end());
+//         sort(s2.begin(), s2.end());
+//         return s1 == s2;
+//     }
+// }
+// int main() {
+//     string s1 = "listen";
+//     string s2 = "silent";
+//     cout << checkAnagram(s1, s2);
+//     return 0;
+// }
+
 // Number of Digits
 // He stuck to a problem in which he has given a long integer ‘X’ and had to count the number of digits in it?
 // Input: 'X' = 2
@@ -26756,6 +26780,7 @@
 //         return {day, profit};
 //     }
 // };
+
 
 
 
