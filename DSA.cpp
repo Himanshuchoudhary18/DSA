@@ -830,6 +830,28 @@
 //     return 0;
 // }
 
+// N = 5
+// A_
+// A_B_
+// A_B_C_
+// A_B_C_D_
+// A_B_C_D_E_
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     int N = 5;
+//     for (int i = 1; i <= N; i++) {
+//         char ch = 'A';
+//         for (int j = 1; j <= i; j++) {
+//             cout << ch << "_";
+//             ch++;
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
 // A
 // B A
 // C B A
@@ -26812,6 +26834,7 @@
 //         return {day, profit};
 //     }
 // };
+
 
 
 
